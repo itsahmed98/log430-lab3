@@ -48,7 +48,7 @@ namespace MagasinCentral.Controllers
         /// </summary>
         /// <param name="produit"></param>
         [HttpPost]
-        public async Task<IActionResult> Modifier(Produit produit)
+        public async Task<IActionResult> Modifier(int produitId, ProduitDto produit)
         {
             IActionResult result = null!;
 
@@ -59,7 +59,7 @@ namespace MagasinCentral.Controllers
 
             try
             {
-                await _produitService.ModifierProduitAsync(produit);
+                await _produitService.ModifierProduitAsync(produitId,produit);
                 TempData["Succès"] = $"Le produit « {produit.Nom} » a bien été mis à jour.";
                 result = RedirectToAction(nameof(Index));
             }

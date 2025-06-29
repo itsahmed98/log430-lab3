@@ -32,16 +32,19 @@ namespace MagasinCentral.Services
         }
 
         /// <inheritdoc />
-        public async Task ModifierProduitAsync(Produit produit)
+        public async Task ModifierProduitAsync(int produitId, ProduitDto produitDto)
         {
-            var exist = await _contexte.Produits
-                .AsNoTracking()
-                .FirstOrDefaultAsync(p => p.ProduitId == produit.ProduitId);
-
-            if (exist == null)
+            // Map ProduitDto to Produit
+            var produit = await _contexte.Produits.FirstOrDefaultAsync(p => p.ProduitId == produitId);
+            if (produit == null)
             {
-                throw new ArgumentException($"Le produit d’ID={produit.ProduitId} n’existe pas.");
+                throw new InvalidOperationException("Produit not found.");
             }
+
+            produit.Nom = produitDto.Nom;
+            produit.Categorie = produitDto.Categorie;
+            produit.Prix = produitDto.Prix;
+            produit.Description = produitDto.Description;
 
             _contexte.Produits.Update(produit);
             await _contexte.SaveChangesAsync();

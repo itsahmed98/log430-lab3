@@ -22,7 +22,7 @@ namespace MagasinCentral.Services
         /// <summary>
         /// Met à jour un produit existant.
         /// </summary>
-        Task ModifierProduitAsync(Produit produit);
+        Task ModifierProduitAsync(int produitId, ProduitDto produit);
 
         /// <summary>Recherche de produits par identifiant, nom ou catégorie.</summary>
         Task<List<Produit>> RechercherProduitsAsync(string terme);
