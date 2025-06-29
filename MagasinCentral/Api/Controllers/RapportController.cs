@@ -18,9 +18,9 @@ namespace MagasinCentral.Api.Controllers
         }
 
         /// <summary>
-        /// Génère le rapport consolidé des ventes entre deux dates.
+        /// Récupère le rapport consolidé des ventes.
         /// </summary>
-        /// <returns>Un rapport consolidé des ventes.</returns>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(typeof(RapportDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

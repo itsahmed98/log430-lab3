@@ -28,8 +28,9 @@ namespace MagasinCentral.Api.Controllers
         }
 
         /// <summary>
-        /// Récupérer la quantité du stock dans un magasin spécifique.
+        /// Retourner la quantité de stock pour un magasin spécifique (avec le ID).
         /// </summary>
+        /// <param name="magasinId">L'identifiant du magasin dans lequel on veut récupérer la quantité du stock</param>
         /// <returns></returns>
         [HttpGet(Name = "GetStockMagasin")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]

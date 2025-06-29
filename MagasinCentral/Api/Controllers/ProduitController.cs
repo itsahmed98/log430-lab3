@@ -40,8 +40,10 @@ namespace MagasinCentral.Api.Controllers
         }
 
         /// <summary>
-        /// Récupère un produit par son identifiant.
+        /// Endpoint pour récupérer un produit par son identifiant.
         /// </summary>
+        /// <param name="produitId">L'identifiant du produit à récupérer</param>
+        /// <returns></returns>
         [HttpGet("{produitId:int}")]
         [ProducesResponseType(typeof(Produit), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -69,8 +71,11 @@ namespace MagasinCentral.Api.Controllers
         }
 
         /// <summary>
-        /// Modifie un produit existant.
+        /// Endpoint pour la modification d'un produit existant.
         /// </summary>
+        /// <param name="produitId">L'identifiant du produit à modifier</param>
+        /// <param name="produit">Le nouveau produit</param>
+        /// <returns></returns>
         [HttpPut("{produitId:int}")]
         [ProducesResponseType(typeof(ProduitDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

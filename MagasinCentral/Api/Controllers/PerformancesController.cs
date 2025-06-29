@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MagasinCentral.Api.Controllers
 {
+    /// <summary>
+    /// Un contrôleur pour les performances du tableau de bord.
+    /// </summary>
     [ApiController]
     [Route("api/v1/performances")]
     public class PerformancesController : ControllerBase
@@ -17,7 +20,7 @@ namespace MagasinCentral.Api.Controllers
         }
 
         /// <summary>
-        /// Récupère les performances du magasin.
+        /// Récupère les performances des magasins.
         /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
