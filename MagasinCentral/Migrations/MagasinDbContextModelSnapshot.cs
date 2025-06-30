@@ -418,25 +418,25 @@ namespace MagasinCentral.Migrations
                         new
                         {
                             VenteId = 1,
-                            Date = new DateTime(2025, 6, 27, 18, 26, 33, 383, DateTimeKind.Utc).AddTicks(7906),
+                            Date = new DateTime(2025, 6, 28, 19, 18, 56, 248, DateTimeKind.Utc).AddTicks(5381),
                             MagasinId = 1
                         },
                         new
                         {
                             VenteId = 2,
-                            Date = new DateTime(2025, 6, 28, 18, 26, 33, 383, DateTimeKind.Utc).AddTicks(7913),
+                            Date = new DateTime(2025, 6, 29, 19, 18, 56, 248, DateTimeKind.Utc).AddTicks(5388),
                             MagasinId = 2
                         },
                         new
                         {
                             VenteId = 3,
-                            Date = new DateTime(2025, 6, 28, 18, 26, 33, 383, DateTimeKind.Utc).AddTicks(7915),
+                            Date = new DateTime(2025, 6, 29, 19, 18, 56, 248, DateTimeKind.Utc).AddTicks(5389),
                             MagasinId = 1
                         },
                         new
                         {
                             VenteId = 4,
-                            Date = new DateTime(2025, 6, 29, 18, 26, 33, 383, DateTimeKind.Utc).AddTicks(7916),
+                            Date = new DateTime(2025, 6, 30, 19, 18, 56, 248, DateTimeKind.Utc).AddTicks(5391),
                             MagasinId = 3
                         });
                 });

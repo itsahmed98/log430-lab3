@@ -117,19 +117,11 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // Migration de la base de donn�es
-using (var scope = app.Services.CreateScope())
+if (app.Environment.IsDevelopment())
 {
+    using var scope = app.Services.CreateScope();
     var db = scope.ServiceProvider.GetRequiredService<MagasinDbContext>();
-    if (db.Database.IsRelational())
-    {
-        // PostgreSQL, SQL Server, etc.
-        db.Database.Migrate();
-    }
-    else
-    {
-        // Provider InMemory ou autre : cr�ation simple
-        db.Database.EnsureCreated();
-    }
+    db.Database.Migrate();
 }
 
 // Middleware

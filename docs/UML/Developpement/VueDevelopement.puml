@@ -53,6 +53,14 @@ package "Web MVC (Présentation)" as WebMVC <<Layer>> {
   }
 }
 
+package "MagasinCentral.Api" as API <<Layer>> {
+  [AuthController] <<Component>>
+  [PerformancesApiController] <<Component>>
+  [RapportApiController] <<Component>>
+  [ProduitApiController] <<Component>>
+  [StockApiController] <<Component>>
+}
+
 package "MagasinCentral.Services (Métier)" as Services <<Layer>> {
   interface IProduitService
   interface IRapportService
@@ -103,6 +111,8 @@ MagasinDbContext --> StockCentral : <<mappe>>
 MagasinDbContext --> Vente : <<mappe>>
 
 DataSeeder --> MagasinDbContext : <<alimente>>
+
+API -> Services : <<utilise>>
 
 
 @enduml

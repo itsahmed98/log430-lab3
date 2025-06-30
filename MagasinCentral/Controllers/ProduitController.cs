@@ -59,7 +59,7 @@ namespace MagasinCentral.Controllers
 
             try
             {
-                await _produitService.ModifierProduitAsync(produitId,produit);
+                await _produitService.ModifierProduitAsync(produitId, produit);
                 TempData["Succès"] = $"Le produit « {produit.Nom} » a bien été mis à jour.";
                 result = RedirectToAction(nameof(Index));
             }
