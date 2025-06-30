@@ -23,15 +23,12 @@ services:
 
   # Application .NET Core
   app:
-    image: ahmedsherif98/magasincentral-mvc:latest
-    container_name: magasincentral-app
-    restart: unless-stopped
-    depends_on:
-      db:
-        condition: service_healthy
+    build:
+      context: .
+      dockerfile: MagasinCentral/Dockerfile
+    image: magasincentral-api:latest
     environment:
       ASPNETCORE_ENVIRONMENT: "Production"
-      # Surcharge de la chaîne de connexion
       ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=magasincentraldb;Username=magasinuser;Password=magasinpass"
     ports:
       - "80:80"

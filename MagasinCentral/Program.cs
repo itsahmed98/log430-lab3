@@ -19,7 +19,7 @@ var jwtSettings = jwtSettingsSection.Get<JwtSettings>();
 builder.Services.AddDbContext<MagasinDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Services métiers
+// Services mï¿½tiers
 builder.Services.AddScoped<IRapportService, RapportService>();
 builder.Services.AddScoped<IReapprovisionnementService, ReapprovisionnementService>();
 builder.Services.AddScoped<IPerformancesService, PerformancesService>();
@@ -39,8 +39,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     .AddEntityFrameworkStores<MagasinDbContext>()
     .AddDefaultTokenProviders();
 
-// Configuration des services d'identité
-var key = Encoding.UTF8.GetBytes(jwtSettings.Secret);
+// Configuration des services d'identitï¿½
+var key = Encoding.UTF8.GetBytes(jwtSettings!.Secret);
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -72,7 +72,8 @@ builder.Services.AddAuthorization();
 // MVC + API + CORS + Swagger
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
-builder.Services.AddCors(options => {
+builder.Services.AddCors(options =>
+{
     options.AddPolicy("AllowFrontend", policy =>
         policy.WithOrigins("https://localhost:4200")
               .AllowAnyMethod()
@@ -80,7 +81,8 @@ builder.Services.AddCors(options => {
 });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => {
+builder.Services.AddSwaggerGen(c =>
+{
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "MagasinCentral API", Version = "v1" });
 
     var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -114,7 +116,7 @@ builder.Services.AddSwaggerGen(c => {
 
 var app = builder.Build();
 
-// Migration de la base de données
+// Migration de la base de donnï¿½es
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<MagasinDbContext>();
@@ -125,7 +127,7 @@ using (var scope = app.Services.CreateScope())
     }
     else
     {
-        // Provider InMemory ou autre : création simple
+        // Provider InMemory ou autre : crï¿½ation simple
         db.Database.EnsureCreated();
     }
 }
