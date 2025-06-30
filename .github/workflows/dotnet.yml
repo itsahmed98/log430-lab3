@@ -78,6 +78,10 @@ jobs:
             echo "${{ secrets.DOCKERHUB_TOKEN }}" \
               | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
+            # Supprimer les conteneurs problématiques
+            docker ps -aq --filter "name=magasincentral-db" | xargs -r docker rm -f
+            docker ps -aq --filter "ancestor=magasincentral-api" | xargs -r docker rm -f
+
             # tear down old containers
             docker-compose down --remove-orphans
 
