@@ -3,7 +3,7 @@ using MagasinCentral.Models;
 using MagasinCentral.Services;
 using Microsoft.EntityFrameworkCore;
 
-namespace MagasinCentral.Tests.Services
+namespace MagasinCentral.Tests.UnitTests.Services
 { }
 
 /// <summary>

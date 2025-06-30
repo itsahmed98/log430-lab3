@@ -118,7 +118,16 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<MagasinDbContext>();
-    db.Database.Migrate();
+    if (db.Database.IsRelational())
+    {
+        // PostgreSQL, SQL Server, etc.
+        db.Database.Migrate();
+    }
+    else
+    {
+        // Provider InMemory ou autre : création simple
+        db.Database.EnsureCreated();
+    }
 }
 
 // Middleware
@@ -147,3 +156,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+public partial class Program { }

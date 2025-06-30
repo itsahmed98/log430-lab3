@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Microsoft.EntityFrameworkCore;
 
-namespace MagasinCentral.Tests.Controllers
+namespace MagasinCentral.Tests.UnitTests.Controllers
 {
 
 

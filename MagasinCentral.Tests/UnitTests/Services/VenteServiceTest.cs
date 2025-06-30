@@ -3,7 +3,7 @@ using MagasinCentral.Services;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 
-namespace MagasinCentral.Tests.Services
+namespace MagasinCentral.Tests.UnitTests.Services
 {
     public class VenteServiceTest
     {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
 
-namespace MagasinCentral.Tests
+namespace MagasinCentral.Tests.UnitTests.Controllers
 {
     /// <summary>
     ///     Tests unitaires pour le RapportController.

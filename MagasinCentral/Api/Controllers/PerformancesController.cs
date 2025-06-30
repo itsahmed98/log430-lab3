@@ -27,6 +27,7 @@ namespace MagasinCentral.Api.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult> GetPerformances()
         {
             _logger.LogInformation("Début de la récupération des performances du magasin.");

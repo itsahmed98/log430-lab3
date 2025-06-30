@@ -3,7 +3,7 @@ using MagasinCentral.Data;
 using MagasinCentral.Services;
 
 
-namespace MagasinCentral.Tests.Services
+namespace MagasinCentral.Tests.UnitTests.Controllers
 {
     public class ProduitServiceTest
     {

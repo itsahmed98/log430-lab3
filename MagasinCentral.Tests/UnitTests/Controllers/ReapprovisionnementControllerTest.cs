@@ -4,7 +4,7 @@ using MagasinCentral.ViewModels;
 using Moq;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MagasinCentral.Tests.Controllers
+namespace MagasinCentral.Tests.UnitTests.Controllers
 {
     /// <summary>
     /// Tests unitaires pour le contrôleur de réapprovisionnement.

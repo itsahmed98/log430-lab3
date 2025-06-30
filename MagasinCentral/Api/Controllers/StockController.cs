@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MagasinCentral.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MagasinCentral.Api.Controllers
 {
@@ -8,6 +9,7 @@ namespace MagasinCentral.Api.Controllers
     /// </summary>
     [ApiController]
     [Route("api/v1/stocks")]
+    [Authorize]
     public class StockController : ControllerBase
     {
         private readonly IStockService _stockService;
@@ -34,6 +36,7 @@ namespace MagasinCentral.Api.Controllers
         /// <returns></returns>
         [HttpGet(Name = "GetStockMagasin")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<int>> GetStockMagasin(int magasinId)

@@ -9,7 +9,7 @@ using Xunit;
 using MagasinCentral.ViewModels;
 
 
-namespace MagasinCentral.Tests.Services
+namespace MagasinCentral.Tests.UnitTests.Controllers
 {
     public class PerformanceControllerTest
     {

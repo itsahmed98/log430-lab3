@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
-namespace MagasinCentral.Tests.Controllers
+namespace MagasinCentral.Tests.UnitTests.Controllers
 {
 
     /// <summary>
